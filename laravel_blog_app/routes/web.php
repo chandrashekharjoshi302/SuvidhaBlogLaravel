@@ -35,6 +35,11 @@ Route::post('/contact/update', [ContactController::class, 'contact_delete_idM'])
 
 Route::post('/contact/delete', [ContactController::class, 'contact_delete_idM'])->name('contact_delete_idM');
 
+
+
+
+
+
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
     Route::post('/admin/blogs/{blog}/toggle-active', [AdminController::class, 'toggleActive'])->name('admin.toggleActive');
