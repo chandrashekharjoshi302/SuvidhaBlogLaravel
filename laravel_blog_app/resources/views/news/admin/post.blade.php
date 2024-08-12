@@ -1,4 +1,5 @@
-<?php include "header.php"; ?>
+@extends('news.admin.layouts.app')
+@section('contant')
   <div id="admin-content">
       <div class="container">
           <div class="row">
@@ -6,7 +7,7 @@
                   <h1 class="admin-heading">All Posts</h1>
               </div>
               <div class="col-md-2">
-                  <a class="add-new" href="add-post.php">add post</a>
+                  <a class="add-new" href="{{route('AdminNews_add_post')}}">add post</a>
               </div>
               <div class="col-md-12">
                   <table class="content-table">
@@ -26,7 +27,7 @@
                               <td>Html</td>
                               <td>01 Nov, 2019</td>
                               <td>Admin</td>
-                              <td class='edit'><a href='update-post.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_post')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-post.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -35,7 +36,7 @@
                               <td>Html</td>
                               <td>01 Nov, 2019</td>
                               <td>Admin</td>
-                              <td class='edit'><a href='update-post.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_post')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-post.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -44,7 +45,7 @@
                               <td>Html</td>
                               <td>01 Nov, 2019</td>
                               <td>Admin</td>
-                              <td class='edit'><a href='update-post.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_post')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-post.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -53,7 +54,7 @@
                               <td>Html</td>
                               <td>01 Nov, 2019</td>
                               <td>Admin</td>
-                              <td class='edit'><a href='update-post.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_post')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-post.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -62,7 +63,7 @@
                               <td>Html</td>
                               <td>01 Nov, 2019</td>
                               <td>Admin</td>
-                              <td class='edit'><a href='update-post.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_post')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-post.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -71,7 +72,7 @@
                               <td>Html</td>
                               <td>01 Nov, 2019</td>
                               <td>Admin</td>
-                              <td class='edit'><a href='update-post.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_post')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-post.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -80,7 +81,7 @@
                               <td>Html</td>
                               <td>01 Nov, 2019</td>
                               <td>Admin</td>
-                              <td class='edit'><a href='update-post.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_post')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-post.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -89,7 +90,7 @@
                               <td>Html</td>
                               <td>01 Nov, 2019</td>
                               <td>Admin</td>
-                              <td class='edit'><a href='update-post.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_post')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-post.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                       </tbody>
@@ -103,4 +104,4 @@
           </div>
       </div>
   </div>
-<?php include "footer.php"; ?>
+  @endsection

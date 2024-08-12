@@ -1,4 +1,5 @@
-<?php include "header.php"; ?>
+@extends('news.admin.layouts.app')
+@section('contant')
   <div id="admin-content">
       <div class="container">
           <div class="row">
@@ -39,4 +40,4 @@
            </div>
        </div>
    </div>
-<?php include "footer.php"; ?>
+   @endsection

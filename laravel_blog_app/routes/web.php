@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,9 +37,28 @@ Route::post('/contact/update', [ContactController::class, 'contact_delete_idM'])
 Route::post('/contact/delete', [ContactController::class, 'contact_delete_idM'])->name('contact_delete_idM');
 
 
+//NewsController
 
 
+Route::get('/news/author', [NewsController::class, 'NewsAuthor'])->name('news_NewsAuthor');
+Route::get('/news/category', [NewsController::class, 'NewsCategory'])->name('news_NewsCategory');
+Route::get('/news', [NewsController::class, 'News'])->name('news_index');
+Route::get('/news/search', [NewsController::class, 'NewsSearch'])->name('news_NewsSearch');
+Route::get('/news/single', [NewsController::class, 'NewsSingle'])->name('news_NewsSingle');
 
+
+//NewsController-admin
+
+
+Route::get('/news/admin/add-post', [NewsController::class, 'AdminNews_add_post'])->name('AdminNews_add_post');
+Route::get('/news/admin/add-user', [NewsController::class, 'AdminNews_add_user'])->name('AdminNews_add_user');
+Route::get('/news/admin/category', [NewsController::class, 'AdminNews_category'])->name('AdminNews_category');
+Route::get('/news/admin', [NewsController::class, 'AdminNews_post'])->name('AdminNews_post');
+Route::get('/news/admin/post', [NewsController::class, 'AdminNewsSingle'])->name('AdminNewsSingle');
+Route::get('/news/admin/update-category', [NewsController::class, 'AdminNews_update_category'])->name('AdminNews_update_category');
+Route::get('/news/admin/update-post', [NewsController::class, 'AdminNews_update_post'])->name('AdminNews_update_post');
+Route::get('/news/admin/update-user', [NewsController::class, 'AdminNews_update_user'])->name('AdminNews_update_user');
+Route::get('/news/admin/user', [NewsController::class, 'AdminNews_user'])->name('AdminNews_user');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');

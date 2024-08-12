@@ -1,4 +1,5 @@
-<?php include "header.php"; ?>
+@extends('news.admin.layouts.app')
+@section('contant')
   <div id="admin-content">
       <div class="container">
           <div class="row">
@@ -6,7 +7,7 @@
                   <h1 class="admin-heading">All Users</h1>
               </div>
               <div class="col-md-2">
-                  <a class="add-new" href="add-user.php">add user</a>
+                  <a class="add-new" href="{{route('AdminNews_add_user')}}">add user</a>
               </div>
               <div class="col-md-12">
                   <table class="content-table">
@@ -24,7 +25,7 @@
                               <td>Ram Sharma</td>
                               <td>ram</td>
                               <td>admin</td>
-                              <td class='edit'><a href='update-user.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_user')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -32,7 +33,7 @@
                               <td>Shyam Kumar</td>
                               <td>shyam</td>
                               <td>normal</td>
-                              <td class='edit'><a href='update-user.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_user')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -40,7 +41,7 @@
                               <td>Ramesh Kumar</td>
                               <td>ramesh</td>
                               <td>admin</td>
-                              <td class='edit'><a href='update-user.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_user')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <tr>
@@ -48,7 +49,7 @@
                               <td>Satish Sharma</td>
                               <td>satish</td>
                               <td>admin</td>
-                              <td class='edit'><a href='update-user.php'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='{{route('AdminNews_update_user')}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                       </tbody>
@@ -62,4 +63,4 @@
           </div>
       </div>
   </div>
-<?php include "header.php"; ?>
+  @endsection

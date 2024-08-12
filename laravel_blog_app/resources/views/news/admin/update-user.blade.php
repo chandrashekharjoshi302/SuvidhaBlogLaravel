@@ -1,4 +1,5 @@
-<?php include "header.php"; ?>
+@extends('news.admin.layouts.app')
+@section('contant')
   <div id="admin-content">
       <div class="container">
           <div class="row">
@@ -25,7 +26,7 @@
                       </div>
                       <div class="form-group">
                           <label>User Role</label>
-                          <select class="form-control" name="role" value="<?php echo $row['role']; ?>">
+                          <select class="form-control" name="role" value="">
                               <option value="0">normal User</option>
                               <option value="1">Admin</option>
                           </select>
@@ -37,4 +38,4 @@
           </div>
       </div>
   </div>
-<?php include "footer.php"; ?>
+  @endsection

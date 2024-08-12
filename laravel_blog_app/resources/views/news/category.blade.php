@@ -1,5 +1,5 @@
-@extends('contact.app')
-@section('contact')
+@extends('news.layouts.app')
+@section('contant')
     <div id="main-content">
       <div class="container">
         <div class="row">
@@ -224,7 +224,7 @@
                     </ul>
                 </div><!-- /post-container -->
             </div>
-            @include('sidebar')
+            @include('news.sidebar')
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
-<?php include "header.php"; ?>
+@extends('news.admin.layouts.app')
+@section('contant')
 <div id="admin-content">
     <div class="container">
         <div class="row">
@@ -6,7 +7,7 @@
                 <h1 class="admin-heading">All Categories</h1>
             </div>
             <div class="col-md-2">
-                <a class="add-new" href="add-category.php">add category</a>
+                <a class="add-new" href="{{route('AdminNews_post')}}">add category</a>
             </div>
             <div class="col-md-12">
                 <table class="content-table">
@@ -22,42 +23,42 @@
                             <td class='id'>1</td>
                             <td>Html</td>
                             <td>5</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
+                            <td class='edit'><a href='{{route('AdminNews_update_category')}}'><i class='fa fa-edit'></i></a></td>
                             <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
                         </tr>
                         <tr>
                             <td class='id'>2</td>
                             <td>Css</td>
                             <td>15</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
+                            <td class='edit'><a href='{{route('AdminNews_update_category')}}'><i class='fa fa-edit'></i></a></td>
                             <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
                         </tr>
                         <tr>
                             <td class='id'>3</td>
                             <td>Java</td>
                             <td>8</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
+                            <td class='edit'><a href='{{route('AdminNews_update_category')}}'><i class='fa fa-edit'></i></a></td>
                             <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
                         </tr>
                         <tr>
                             <td class='id'>4</td>
                             <td>Php</td>
                             <td>11</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
+                            <td class='edit'><a href='{{route('AdminNews_update_category')}}'><i class='fa fa-edit'></i></a></td>
                             <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
                         </tr>
                         <tr>
                             <td class='id'>5</td>
                             <td>Python</td>
                             <td>13</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
+                            <td class='edit'><a href='{{route('AdminNews_update_category')}}'><i class='fa fa-edit'></i></a></td>
                             <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
                         </tr>
                         <tr>
                             <td class='id'>6</td>
                             <td>Scss</td>
                             <td>3</td>
-                            <td class='edit'><a href='update-category.php'><i class='fa fa-edit'></i></a></td>
+                            <td class='edit'><a href='{{route('AdminNews_update_category')}}'><i class='fa fa-edit'></i></a></td>
                             <td class='delete'><a href='delete-category.php'><i class='fa fa-trash-o'></i></a></td>
                         </tr>
                     </tbody>
@@ -71,4 +72,4 @@
         </div>
     </div>
 </div>
-<?php include "footer.php"; ?>
+@endsection
