@@ -22,10 +22,14 @@
                       <div class="form-group">
                           <label for="exampleInputPassword1">Scientists</label>
                           <select name="subjectcategoriesID" class="form-control">
-                              <option value="" selected> Select Category</option>
-                              <option value="1" >1</option>
-                              <option value="2" >2</option>
-                              <option value="3" >3</option>
+                            <option value="" selected> Select Category</option>
+                            @foreach ($Subjectcategory as $item)
+                                
+                           
+         
+                              <option value="1" >{{$item->subjectcategoriesID}}</option>
+                          
+                              @endforeach
                           </select>
                       </div>
                       {{-- subjectcategories --}}
@@ -34,9 +38,12 @@
                         <label for="exampleInputPassword1">Subjectcategories</label>
                         <select name="scientistsID" class="form-control">
                             <option value="" selected> Select Category</option>
-                            <option value="1" >1</option>
-                            <option value="2" >2</option>
-                            <option value="3" >3</option>
+
+                            @foreach ($Scientists as $item)
+                                
+                          
+                            <option value="1" >{{$item->scientistsID}}</option>
+                            @endforeach
                         </select>
                     </div>
                       {{-- <div class="form-group">

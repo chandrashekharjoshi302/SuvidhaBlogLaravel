@@ -33,9 +33,12 @@ class NewsController extends Controller
     public function AdminNews_add_post()
     {
 
+        $Subjectcategory = subjectcategory::all();
+        $Scientists = scientists::all();
 
 
-        return view('news.admin.add-post');
+
+        return view('news.admin.add-post', compact('Subjectcategory', 'Scientists'));
     }
 
     public function AdminNews_add_user()
