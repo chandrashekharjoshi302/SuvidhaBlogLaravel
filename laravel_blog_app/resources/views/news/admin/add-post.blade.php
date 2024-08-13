@@ -8,25 +8,41 @@
              </div>
               <div class="col-md-offset-3 col-md-6">
                   <!-- Form -->
-                  <form  action="" method="POST" enctype="multipart/form-data">
+                  <form  action="{{route('AdminNews_add_post_DataPost')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                       <div class="form-group">
                           <label for="post_title">Title</label>
-                          <input type="text" name="post_title" class="form-control" autocomplete="off" required>
+                          <input type="Title" name="title" class="form-control" autocomplete="off" required>
                       </div>
                       <div class="form-group">
                           <label for="exampleInputPassword1"> Description</label>
-                          <textarea name="postdesc" class="form-control" rows="5"  required></textarea>
+                          <textarea name="descriptions" class="form-control" rows="5"  required></textarea>
                       </div>
+                      {{-- scientists --}}
                       <div class="form-group">
-                          <label for="exampleInputPassword1">Category</label>
-                          <select name="category" class="form-control">
+                          <label for="exampleInputPassword1">Scientists</label>
+                          <select name="subjectcategoriesID" class="form-control">
                               <option value="" selected> Select Category</option>
+                              <option value="1" >1</option>
+                              <option value="2" >2</option>
+                              <option value="3" >3</option>
                           </select>
                       </div>
+                      {{-- subjectcategories --}}
+
                       <div class="form-group">
+                        <label for="exampleInputPassword1">Subjectcategories</label>
+                        <select name="scientistsID" class="form-control">
+                            <option value="" selected> Select Category</option>
+                            <option value="1" >1</option>
+                            <option value="2" >2</option>
+                            <option value="3" >3</option>
+                        </select>
+                    </div>
+                      {{-- <div class="form-group">
                           <label for="exampleInputPassword1">Post image</label>
-                          <input type="file" name="fileToUpload" required>
-                      </div>
+                          <input type="file" name="image" required>
+                      </div> --}}
                       <input type="submit" name="submit" class="btn btn-primary" value="Save" required />
                   </form>
                   <!--/Form -->

@@ -57,8 +57,13 @@ Route::get('/news/admin', [NewsController::class, 'AdminNews_post'])->name('Admi
 Route::get('/news/admin/post', [NewsController::class, 'AdminNewsSingle'])->name('AdminNewsSingle');
 Route::get('/news/admin/update-category', [NewsController::class, 'AdminNews_update_category'])->name('AdminNews_update_category');
 Route::get('/news/admin/update-post', [NewsController::class, 'AdminNews_update_post'])->name('AdminNews_update_post');
-Route::get('/news/admin/update-user', [NewsController::class, 'AdminNews_update_user'])->name('AdminNews_update_user');
+Route::get('/news/admin/update-user/{id}', [NewsController::class, 'AdminNews_update_user'])->name('AdminNews_update_user');
 Route::get('/news/admin/user', [NewsController::class, 'AdminNews_user'])->name('AdminNews_user');
+
+Route::post('/news/admin/add-user', [NewsController::class, 'AdminNews_add_user_DataPost'])->name('AdminNews_add_user_DataPost');
+Route::post('/news/admin', [NewsController::class, 'AdminNews_post_DataPost'])->name('AdminNews_post_DataPost');
+Route::post('/news/admin/add-post', [NewsController::class, 'AdminNews_add_post_DataPost'])->name('AdminNews_add_post_DataPost');
+Route::put('/news/admin/update-user/{id}', [NewsController::class, 'AdminNews_update_user_DataPost'])->name('AdminNews_update_user_DataPost');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');

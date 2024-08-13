@@ -20,38 +20,18 @@
                           <th>Delete</th>
                       </thead>
                       <tbody>
+                        @foreach ($Scientists as $item)
+                            
+                       
                           <tr>
-                              <td class='id'>1</td>
-                              <td>Ram Sharma</td>
-                              <td>ram</td>
-                              <td>admin</td>
-                              <td class='edit'><a href='{{route('AdminNews_update_user')}}'><i class='fa fa-edit'></i></a></td>
+                              <td class='id'>{{$item->scientistsID}}</td>
+                              <td>{{$item->fname}}  {{$item->lname}}</td>
+                              <td>{{$item->user}}</td>
+                              <td>{{$item->role}}</td>
+                              <td class='edit'><a href='{{route('AdminNews_update_user', $item->scientistsID)}}'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
-                          <tr>
-                              <td class='id'>2</td>
-                              <td>Shyam Kumar</td>
-                              <td>shyam</td>
-                              <td>normal</td>
-                              <td class='edit'><a href='{{route('AdminNews_update_user')}}'><i class='fa fa-edit'></i></a></td>
-                              <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
-                          </tr>
-                          <tr>
-                              <td class='id'>3</td>
-                              <td>Ramesh Kumar</td>
-                              <td>ramesh</td>
-                              <td>admin</td>
-                              <td class='edit'><a href='{{route('AdminNews_update_user')}}'><i class='fa fa-edit'></i></a></td>
-                              <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
-                          </tr>
-                          <tr>
-                              <td class='id'>4</td>
-                              <td>Satish Sharma</td>
-                              <td>satish</td>
-                              <td>admin</td>
-                              <td class='edit'><a href='{{route('AdminNews_update_user')}}'><i class='fa fa-edit'></i></a></td>
-                              <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
-                          </tr>
+                          @endforeach
                       </tbody>
                   </table>
                   <ul class='pagination admin-pagination'>

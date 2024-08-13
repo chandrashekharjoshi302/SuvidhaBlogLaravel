@@ -8,7 +8,8 @@
               </div>
               <div class="col-md-offset-3 col-md-6">
                   <!-- Form Start -->
-                  <form  action="" method ="POST" autocomplete="off">
+                  <form  action="{{route('AdminNews_add_user_DataPost')}}" method ="POST" autocomplete="off">
+                    @csrf
                       <div class="form-group">
                           <label>First Name</label>
                           <input type="text" name="fname" class="form-control" placeholder="First Name" required>
@@ -29,8 +30,8 @@
                       <div class="form-group">
                           <label>User Role</label>
                           <select class="form-control" name="role" >
-                              <option value="0">Normal User</option>
-                              <option value="1">Admin</option>
+                              <option value="user">Normal User</option>
+                              <option value="admin">Admin</option>
                           </select>
                       </div>
                       <input type="submit"  name="save" class="btn btn-primary" value="Save" required />
