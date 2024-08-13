@@ -28,8 +28,18 @@
                               <td>{{$item->fname}}  {{$item->lname}}</td>
                               <td>{{$item->user}}</td>
                               <td>{{$item->role}}</td>
-                              <td class='edit'><a href='{{route('AdminNews_update_user', $item->scientistsID)}}'><i class='fa fa-edit'></i></a></td>
-                              <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
+                             
+                              
+                              <td class='edit'><a href='{{route('AdminNews_update_user_DataPost', $item->scientistsID)}}'><i class='fa fa-edit'></i></a></td>
+                              <form action="{{ route('AdminNews_delete_user_DataPost', $item->scientistsID) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                            </form>
+                            
+                            
+
+                          
                           </tr>
                           @endforeach
                       </tbody>

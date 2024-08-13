@@ -43,25 +43,43 @@ class NewsController extends Controller
 
         return view('news.admin.add-user');
     }
-    public function AdminNews_category()
-    {
+    // public function AdminNews_category()
+    // {
 
-        return view('news.admin.category');
-    }
+    //     return view('news.admin.category');
+    // }
     public function AdminNews_post()
     {
 
-        return view('news.admin.index');
+        $Subjectcategory = subjectcategory::all();
+        return view('news.admin.category', compact('Subjectcategory'));
     }
     public function AdminNewsSingle()
     {
 
         return view('news.admin.post');
     }
-    public function AdminNews_update_category()
+    public function AdminNews_update_category_page()
     {
 
         return view('news.admin.update-category');
+    }
+    public function AdminNews_update_category(Request $request, $id)
+    {
+
+
+
+        $Scientists = subjectcategory::findOrFail($id);
+
+        // dd($request->input('cat_name'));
+
+        $Scientists->update([
+            'name' => $request->input('name'),
+
+        ]);
+
+
+        return redirect()->route('news.admin.update-category')->with('success', 'Category updated successfully.');
     }
     public function AdminNews_update_post()
     {
@@ -110,7 +128,7 @@ class NewsController extends Controller
 
     {
 
-        // dd($request->name);
+
 
         $request->validate([
             'name' => 'required|string|max:255',
@@ -124,7 +142,7 @@ class NewsController extends Controller
 
         ]);
 
-        return redirect()->route('AdminNews_category');
+        return redirect()->route('AdminNews_user');
     }
 
 
@@ -166,5 +184,23 @@ class NewsController extends Controller
 
 
         return redirect()->route('AdminNews_user')->with('success', 'Admin updated successfully.');
+    }
+
+    public function AdminNews_delete_user_DataPost($id)
+    {
+        $contact = Scientists::find($id);
+
+        if ($contact) {
+            $contact->delete();
+            return redirect()->route('AdminNews_user')->with('success', 'Admin deleted successfully.');
+        }
+
+        return redirect()->route('AdminNews_user')->with('error', 'Admin not found.');
+    }
+
+
+    public function AdminNews_post_to_show()
+    {
+        return view('news.admin.index');
     }
 }

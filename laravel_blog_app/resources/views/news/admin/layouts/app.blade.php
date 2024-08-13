@@ -46,7 +46,7 @@
                             <a href="{{route('AdminNewsSingle')}}">Post</a>
                         </li>
                         <li>
-                            <a href="{{route('AdminNews_category')}}">Category</a>
+                            <a href="{{route('AdminNews_post')}}">Category</a>
                         </li>
                         <li>
                             <a href="{{route('AdminNews_user')}}">Users</a>
