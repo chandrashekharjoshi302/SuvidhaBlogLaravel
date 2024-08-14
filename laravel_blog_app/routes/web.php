@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CrudController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/crud', [CrudController::class, 'index'])->name('index');
+Route::post('/crud/data', [CrudController::class, 'indexData'])->name('indexData');
+Route::delete('/delete/{id}', [CrudController::class, 'indexDataDelete'])->name('delete');
+Route::get('/crud/edit/{id}', [CrudController::class, 'indexEdit'])->name('indexEdit');
+Route::put('/crud/put/{id}', [CrudController::class, 'indexUpdate'])->name('indexUpdate');
 
 
 Route::get('/blog', [BlogController::class, 'create']);
